@@ -34,7 +34,9 @@
       "...." = "cd ../../..";
 
       # ghq + fzf
+      repos = "gh api --paginate /user/repos --jq '.[].full_name' | fzf";
       cdp = "cd $(ghq root)/$(ghq list | fzf --preview 'bat --color=always --style=header,grid --line-range :80 $(ghq root)/{}/README.md 2>/dev/null || ls -la $(ghq root)/{}')";
+      nvimp = "cd $(ghq root)/$(ghq list | fzf) && nvim .";
 
       # Git
       g = "git";
@@ -75,6 +77,21 @@
       gwb = "./gradlew bootRun";
       gwc = "./gradlew clean";
       gwt = "./gradlew test";
+
+      # Claude Code (installed via native installer in programs/claude-code.nix)
+      cc = "claude";
+      ccc = "claude --continue";
+      ccd = "claude --dangerously-skip-permissions";
+      ccdc = "claude --dangerously-skip-permissions --continue";
+      ccp = "cd $(ghq root)/$(ghq list | fzf) && claude";
+      ccpc = "cd $(ghq root)/$(ghq list | fzf) && claude --continue";
+      chat = "claude -p";
+
+      # AWS
+      awss = "source ~/Private/scripts/aws-switch-role/aws-switch-role.sh";
+
+      # Factory Tools
+      aurora-tunnel = "/Users/kosuke.kihara/ghq/github.com/kinto-dev/factory-tools/bin/aurora-tunnel";
 
       # Misc
       reload = "source ~/.zshrc";
@@ -126,6 +143,14 @@
       }
       zle -N fzf-history
       bindkey '^R' fzf-history
+
+      # Simple ghq + fzf navigation (p command)
+      function p() {
+        local dir=$(ghq list --full-path | fzf)
+        if [ -n "$dir" ]; then
+          cd "$dir"
+        fi
+      }
     '';
 
     # Environment variables specific to zsh

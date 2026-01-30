@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, factory-base, ... }:
 
 let
   # Hardcode username to avoid issues with dots in usernames
@@ -6,12 +6,18 @@ let
 in
 {
   imports = [
+    # KINTO FACTORY shared configuration (team settings)
+    factory-base.homeManagerModules.default
+
+    # Personal overrides and additions
     ./packages.nix
     ./shell.nix
     ./git.nix
     ./programs/neovim.nix
     ./programs/starship.nix
     ./programs/fzf.nix
+    ./programs/claude-code.nix
+    ./personal/extra-packages.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should manage

@@ -19,9 +19,15 @@
 
     # nix-homebrew - declarative Homebrew management
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
+    # KINTO FACTORY shared Nix configuration
+    factory-base = {
+      url = "github:ktc-kkihara/factory-nix-base";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, nix-homebrew }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, nix-homebrew, factory-base }:
     let
       # System configuration
       system = "aarch64-darwin";
@@ -38,7 +44,7 @@
 
       # Specialised arguments passed to all modules
       specialArgs = {
-        inherit inputs system hostname username;
+        inherit inputs system hostname username factory-base;
       };
     in
     {

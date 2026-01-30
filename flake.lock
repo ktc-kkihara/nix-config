@@ -17,6 +17,23 @@
         "type": "github"
       }
     },
+    "factory-base": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769764749,
+        "narHash": "sha256-zmT2HzZXyLIcRqkoeYG/AKQaMp8NfJW983fbmoNT24Y=",
+        "path": "/Users/kosuke.kihara/ghq/github.com/ktc-kkihara/factory-nix-base",
+        "type": "path"
+      },
+      "original": {
+        "path": "/Users/kosuke.kihara/ghq/github.com/ktc-kkihara/factory-nix-base",
+        "type": "path"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -93,6 +110,7 @@
     },
     "root": {
       "inputs": {
+        "factory-base": "factory-base",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
