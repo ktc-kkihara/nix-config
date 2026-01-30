@@ -24,14 +24,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1769764749,
-        "narHash": "sha256-zmT2HzZXyLIcRqkoeYG/AKQaMp8NfJW983fbmoNT24Y=",
-        "path": "/Users/kosuke.kihara/ghq/github.com/ktc-kkihara/factory-nix-base",
-        "type": "path"
+        "lastModified": 1769767932,
+        "narHash": "sha256-jS0h/Rglq61rpmS7weptRWOvx84G366VOyD5uNw8BOA=",
+        "owner": "ktc-kkihara",
+        "repo": "factory-nix-base",
+        "rev": "9881cf94477b4b21cbbcddd1667704ad4d777826",
+        "type": "github"
       },
       "original": {
-        "path": "/Users/kosuke.kihara/ghq/github.com/ktc-kkihara/factory-nix-base",
-        "type": "path"
+        "owner": "ktc-kkihara",
+        "repo": "factory-nix-base",
+        "type": "github"
       }
     },
     "home-manager": {
