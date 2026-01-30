@@ -1,0 +1,31 @@
+# Nix build outputs
+result
+result-*
+
+# direnv
+.direnv/
+
+# Editor backup files
+*~
+*.swp
+*.swo
+.*.sw?
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Local overrides (if you want them)
+local.nix
+
+# Secrets (should never be committed)
+secrets/
+*.pem
+*.key
